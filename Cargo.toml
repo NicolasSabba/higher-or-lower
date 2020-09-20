@@ -1,0 +1,10 @@
+[package]
+name = "higher_or_lower"
+version = "0.0.1"
+authors = ["Nicolas Sabbatini <nicolas.sabbatini.95@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+log-update = "*"
