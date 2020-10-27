@@ -29,7 +29,7 @@ fn read() -> String {
     io::stdin()
         .read_line(&mut res)
         .expect("Failed to read line");
-    return res;
+    return res.trim_end().to_owned();
 }
 
 /// Set constraint to the correct values, and
@@ -54,11 +54,11 @@ fn thinking(bot: u8, top: u8) {
 fn check(bot: &mut u8, top: &mut u8) -> bool {
     let mut res;
     res = read();
-    if res == "yes\n" {
+    if res == "yes" {
         write("Yayyy!", 50);
         write("Do you want to play again?", 50);
         res = read();
-        if res == "yes\n" {
+        if res == "yes" {
             start(bot, top);
         } else {
             write("Ohhhh, I hope to see you soon =D", 50);
@@ -67,9 +67,9 @@ fn check(bot: &mut u8, top: &mut u8) -> bool {
     } else {
         write("Dang, your number is (g)reater or (l)ower?", 5);
         res = read();
-        if res == "g\n" {
+        if res == "g" {
             *bot = (*bot + (*top - *bot) / 2) as u8;
-        } else if res == "l\n" {
+        } else if res == "l" {
             *top = (*top - (*top - *bot) / 2) as u8;
         }
     }
